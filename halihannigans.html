@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#397b43">
+  <meta name="description" content="Welcome to HaliHannigans — Jackson, Tennessee's gourmet cupcakery turned café and cakery. Discover 200+ rotating cupcake flavours, custom cakes, and sweet treats. Same family. New chapter.">
+  <title>HaliHannigans | Gourmet Cupcakes, Cakes & Café in Jackson, TN</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #397b43;
+      --green-dark: #245b31;
+      --green-light: #e8f1e4;
+      --green-pale: #f2f7ed;
+      --cream: #fffdf5;
+      --cream-dark: #f7f1df;
+      --yellow: #f5d978;
+      --pink: #f3b7b0;
+      --brown: #554c3b;
+      --text: #343c30;
+      --muted: #777b6e;
+      --white: #fff;
+      --radius: 24px;
+      --shadow: 0 14px 40px rgba(44, 83, 45, .09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fredoka', sans-serif;
+      line-height: 1.15;
+      color: var(--green-dark);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .announcement {
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    .announcement span {
+      color: var(--yellow);
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 253, 245, .96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(57, 123, 67, .1);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .logo-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--green);
+      border-radius: 50% 50% 45% 45%;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      transform: rotate(-5deg);
+    }
+
+    .logo-name {
+      font-family: 'Fredoka', sans-serif;
+      color: var(--green-dark);
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .logo-sub {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 5px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+      color: #4e5949;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 50px;
+      background: var(--green);
+      color: white;
+      padding: 14px 25px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .25s ease;
+      box-shadow: 0 6px 17px rgba(57, 123, 67, .17);
+    }
+
+    .btn:hover {
+      background: var(--green-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 23px rgba(57, 123, 67, .22);
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--green-dark);
+      box-shadow: none;
+    }
+
+    .btn-yellow:hover {
+      background: #ebca60;
+      color: var(--green-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--green);
+      color: var(--green);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 0;
+      background: var(--green-light);
+      color: var(--green-dark);
+      border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      padding: 75px 0 90px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 5% 15%, rgba(245,217,120,.25), transparent 22%),
+        radial-gradient(circle at 95% 80%, rgba(151,194,139,.23), transparent 25%),
+        var(--cream);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      border-radius: 50px;
+      padding: 8px 15px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(54px, 7.5vw, 88px);
+      letter-spacing: -3px;
+      line-height: .99;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--green);
+      display: block;
+    }
+
+    .hero-tagline {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(23px, 3vw, 31px);
+      color: #8caa65;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      max-width: 470px;
+      color: #72776a;
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 27px;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .hero-note span {
+      color: var(--green);
+      font-size: 17px;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 460px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-circle {
+      position: absolute;
+      width: min(440px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #e6efda;
+      border: 1px solid rgba(57,123,67,.1);
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 2;
+      width: 83%;
+      height: 405px;
+      border-radius: 48% 48% 32px 32px;
+      background:
+        linear-gradient(0deg, rgba(37, 73, 38, .17), transparent 55%),
+        url('https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=900&q=85') center/cover;
+      box-shadow: var(--shadow);
+      border: 9px solid var(--cream);
+    }
+
+    .floating-note {
+      position: absolute;
+      z-index: 3;
+      background: white;
+      border-radius: 18px;
+      padding: 15px 19px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-note strong {
+      display: block;
+      color: var(--green-dark);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 27px;
+      line-height: 1.1;
+    }
+
+    .floating-note small {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .note-top {
+      top: 38px;
+      right: -8px;
+      transform: rotate(5deg);
+    }
+
+    .note-bottom {
+      bottom: 22px;
+      left: -15px;
+      transform: rotate(-5deg);
+    }
+
+    .decor {
+      position: absolute;
+      font-size: 36px;
+      opacity: .85;
+    }
+
+    .decor-one { top: 7px; left: 30px; }
+    .decor-two { bottom: 65px; right: 10px; font-size: 27px; }
+
+    /* Shared sections */
+
+    section {
+      position: relative;
+    }
+
+    .section-pad {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 46px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 14px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(35px, 5vw, 52px);
+      letter-spacing: -1px;
+      margin-bottom: 13px;
+    }
+
+    .section-heading p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Flavours */
+
+    .flavours {
+      background: var(--green-pale);
+    }
+
+    .flavour-topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      gap: 15px;
+    }
+
+    .flavour-topline h3 {
+      font-size: 24px;
+    }
+
+    .flavour-topline p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .flavour-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 19px;
+    }
+
+    .flavour-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: .25s;
+      box-shadow: 0 5px 22px rgba(43, 83, 42, .04);
+    }
+
+    .flavour-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .flavour-img {
+      height: 185px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .flavour-img::after {
+      content: "SWEET PICK";
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      background: var(--yellow);
+      color: var(--green-dark);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .flavour-img.f1 {
+      background-image: url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=600&q=80');
+    }
+
+    .flavour-img.f2 {
+      background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80');
+    }
+
+    .flavour-img.f3 {
+      background-image: url('https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?auto=format&fit=crop&w=600&q=80');
+    }
+
+    .flavour-img.f4 {
+      background-image: url('https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=600&q=80');
+    }
+
+    .flavour-info {
+      padding: 18px;
+    }
+
+    .flavour-info h4 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .flavour-info p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .rotation-note {
+      margin-top: 28px;
+      background: white;
+      border: 1px dashed #a6c49d;
+      border-radius: 18px;
+      padding: 21px;
+      text-align: center;
+      font-size: 13px;
+      color: #697563;
+    }
+
+    .rotation-note strong {
+      color: var(--green-dark);
+    }
+
+    /* Menu */
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .menu-card {
+      border-radius: 25px;
+      background: white;
+      border: 1px solid #eeeedd;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .menu-image {
+      height: 205px;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .menu-image.m1 {
+      background-image: url('https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=700&q=80');
+    }
+
+    .menu-image.m2 {
+      background-image: url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=700&q=80');
+    }
+
+    .menu-image.m3 {
+      background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80');
+    }
+
+    .menu-content {
+      padding: 24px;
+    }
+
+    .menu-content h3 {
+      font-size: 25px;
+      margin-bottom: 9px;
+    }
+
+    .menu-content p {
+      color: var(--muted);
+      font-size: 13px;
+      min-height: 65px;
+    }
+
+    .menu-content a {
+      display: inline-flex;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      margin-top: 18px;
+      gap: 7px;
+      align-items: center;
+    }
+
+    /* Custom orders */
+
+    .custom {
+      background: var(--cream-dark);
+      overflow: hidden;
+    }
+
+    .custom-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .custom-art {
+      min-height: 390px;
+      border-radius: 30px;
+      background:
+        linear-gradient(0deg, rgba(30, 72, 36, .12), transparent),
+        url('https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=85') center/cover;
+      position: relative;
+    }
+
+    .custom-sticker {
+      position: absolute;
+      right: -20px;
+      bottom: 25px;
+      background: var(--yellow);
+      color: var(--green-dark);
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.15;
+      transform: rotate(9deg);
+      border: 5px solid var(--cream-dark);
+    }
+
+    .custom-copy h2 {
+      font-size: clamp(36px, 5vw, 52px);
+      margin-bottom: 17px;
+    }
+
+    .custom-copy > p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 23px;
+    }
+
+    .custom-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .custom-list li {
+      display: flex;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      align-items: center;
+    }
+
+    .check {
+      width: 25px;
+      height: 25px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: #dcebd2;
+      border-radius: 50%;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .deadline {
+      padding: 20px 22px;
+      background: #fff;
+      border-left: 5px solid #d99a54;
+      border-radius: 14px;
+      margin-bottom: 25px;
+    }
+
+    .deadline strong {
+      display: block;
+      font-family: 'Fredoka', sans-serif;
+      color: #a45d25;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .deadline p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Community */
+
+    .community {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .community h2 {
+      color: white;
+      font-size: clamp(37px, 5vw, 54px);
+      margin-bottom: 16px;
+    }
+
+    .community .eyebrow {
+      background: rgba(255,255,255,.14);
+      color: var(--yellow);
+    }
+
+    .community-copy {
+      max-width: 650px;
+      margin: 0 auto;
+      color: rgba(255,255,255,.84);
+      font-size: 14px;
+    }
+
+    .community-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 850px;
+      margin: 45px auto 0;
+    }
+
+    .community-feature {
+      padding: 25px 17px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px;
+    }
+
+    .community-feature span {
+      display: block;
+      font-size: 31px;
+      margin-bottom: 9px;
+    }
+
+    .community-feature h3 {
+      color: var(--yellow);
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .community-feature p {
+      font-size: 11px;
+      color: rgba(255,255,255,.78);
+    }
+
+    /* Ordering */
+
+    .order {
+      background: var(--green-pale);
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .order-intro h2 {
+      font-size: clamp(39px, 5vw, 55px);
+      margin-bottom: 16px;
+    }
+
+    .order-intro > p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .order-method {
+      padding: 18px;
+      border-radius: 16px;
+      background: white;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 13px;
+    }
+
+    .order-method-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: var(--green-light);
+      border-radius: 13px;
+      font-size: 21px;
+      flex-shrink: 0;
+    }
+
+    .order-method strong {
+      display: block;
+      font-size: 13px;
+      color: var(--green-dark);
+    }
+
+    .order-method small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    .order-form {
+      background: white;
+      padding: 34px;
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .order-form h3 {
+      font-size: 29px;
+      margin-bottom: 7px;
+    }
+
+    .form-intro {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 23px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 17px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 11px;
+      font-weight: 800;
+      color: #56634e;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #e4e9de;
+      background: #fbfcf8;
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 13px;
+      outline: none;
+      transition: border .2s, box-shadow .2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(57,123,67,.09);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 105px;
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 5px;
+      padding: 16px;
+      font-size: 14px;
+    }
+
+    .form-disclaimer {
+      text-align: center;
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 13px;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #214b2b;
+      color: white;
+      padding: 65px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr .8fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+
+    .footer-logo {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 31px;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .footer-about p {
+      max-width: 340px;
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+    }
+
+    .footer-col h4 {
+      color: var(--yellow);
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      display: block;
+      color: rgba(255,255,255,.74);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .footer-col a:hover {
+      color: var(--yellow);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.15);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      color: rgba(255,255,255,.56);
+      font-size: 10px;
+    }
+
+    .footer-bottom strong {
+      color: var(--yellow);
+    }
+
+    /* Disclaimer */
+
+    .photo-disclaimer {
+      background: #f4edda;
+      text-align: center;
+      padding: 13px 20px;
+      color: #81765f;
+      font-size: 10px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero-grid {
+        gap: 25px;
+      }
+
+      .hero-art {
+        min-height: 400px;
+      }
+
+      .hero-photo {
+        height: 350px;
+      }
+
+      .flavour-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .custom-grid {
+        gap: 35px;
+      }
+
+      .order-grid {
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 32px, 520px);
+      }
+
+      .announcement {
+        font-size: 10px;
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      .logo-name {
+        font-size: 22px;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 21px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav > .btn {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        padding: 20px 25px 25px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 12px 18px rgba(0,0,0,.07);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        border-bottom: 1px solid #e9eddf;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 13px 0;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 55px 0 65px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(55px, 14vw, 75px);
+      }
+
+      .hero-copy {
+        margin-inline: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-note {
+        justify-content: center;
+      }
+
+      .hero-art {
+        min-height: 360px;
+        margin-top: 5px;
+      }
+
+      .hero-circle {
+        width: 320px;
+      }
+
+      .hero-photo {
+        height: 325px;
+        width: 85%;
+      }
+
+      .note-top {
+        right: 0;
+      }
+
+      .note-bottom {
+        left: -5px;
+      }
+
+      .section-pad {
+        padding: 70px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 32px;
+      }
+
+      .section-heading h2 {
+        font-size: 39px;
+      }
+
+      .flavour-topline {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .flavour-grid {
+        gap: 12px;
+      }
+
+      .flavour-img {
+        height: 145px;
+      }
+
+      .flavour-info {
+        padding: 14px;
+      }
+
+      .flavour-info h4 {
+        font-size: 17px;
+      }
+
+      .flavour-info p {
+        font-size: 11px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .menu-image {
+        height: 190px;
+      }
+
+      .menu-content p {
+        min-height: 0;
+      }
+
+      .custom-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .custom-art {
+        min-height: 300px;
+      }
+
+      .custom-sticker {
+        right: -5px;
+        width: 105px;
+        height: 105px;
+        font-size: 17px;
+      }
+
+      .custom-copy h2 {
+        font-size: 40px;
+      }
+
+      .community-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .community-feature {
+        padding: 19px;
+      }
+
+      .order-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .order-intro h2 {
+        font-size: 44px;
+      }
+
+      .order-form {
+        padding: 24px 19px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+      }
+
+      .footer-about {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .flavour-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flavour-img {
+        height: 190px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-about {
+        grid-column: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    <span>♡</span> JACKSON, TENNESSEE <span>♡</span> SOMETHING SWEET IS ALWAYS HAPPENING!
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="HaliHannigans home">
+        <div class="logo-icon">🧁</div>
+        <div>
+          <div class="logo-name">HaliHannigans</div>
+          <span class="logo-sub">Halihannigan's Next Gen</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#flavours">Flavours</a></li>
+        <li><a href="#menu">Our Menu</a></li>
+        <li><a href="#custom">Custom Orders</a></li>
+        <li><a href="#community">Our Community</a></li>
+        <li><a href="#order">Contact</a></li>
+      </ul>
+
+      <a href="#order" class="btn">Let's Order! <span>♡</span></a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy-wrap">
+          <div class="eyebrow">🧁 A LITTLE SLICE OF SWEETNESS</div>
+          <h1>Hali<span class="highlight">Hannigans.</span></h1>
+          <div class="hero-tagline">Same family. New chapter.</div>
+          <p class="hero-copy">
+            A whole lot of love, a little sugar, and something sweet for everyone.
+            We're your hometown gourmet cupcakery that grew into a café & cakery.
+            Come hungry, leave happy!
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#order" class="btn">Place an Order <span>→</span></a>
+            <a href="#flavours" class="btn btn-outline">Explore the Sweetness</a>
+          </div>
+
+          <div class="hero-note">
+            <span>✿</span> Proudly sweetening days in Jackson, Tennessee
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-circle"></div>
+          <span class="decor decor-one">✿</span>
+          <span class="decor decor-two">♡</span>
+          <div class="hero-photo" role="img" aria-label="Placeholder photograph of a decorated cupcake"></div>
+
+          <div class="floating-note note-top">
+            <strong>200+</strong>
+            <small>FLAVOURS TO LOVE!</small>
+          </div>
+
+          <div class="floating-note note-bottom">
+            <strong>Made with ♡</strong>
+            <small>EVERY SWEET BITE</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO NOTICE -->
+    <div class="photo-disclaimer">
+      ✿ Sweet little heads-up: All food and cupcake images on this preview website are illustrative placeholders, not actual HaliHannigans bakery photos.
+    </div>
+
+    <!-- FLAVOURS -->
+    <section class="flavours section-pad" id="flavours">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">THE SWEET STUFF</div>
+          <h2>So Many Flavours.<br>So Little Time.</h2>
+          <p>Variety is the icing on the cupcake! With over 200 flavours on rotation, there's always a new favourite waiting to be discovered.</p>
+        </div>
+
+        <div class="flavour-topline">
+          <div>
+            <h3>A Taste of the Possibilities</h3>
+            <p>Just a few sweet examples to get you dreaming.</p>
+          </div>
+          <span class="eyebrow">200+ FLAVOURS & COUNTING</span>
+        </div>
+
+        <div class="flavour-grid">
+          <article class="flavour-card">
+            <div class="flavour-img f1" role="img" aria-label="Placeholder cupcake photograph"></div>
+            <div class="flavour-info">
+              <h4>Classic Sweetness</h4>
+              <p>Timeless cupcake inspiration with a little extra love.</p>
+            </div>
+          </article>
+
+          <article class="flavour-card">
+            <div class="flavour-img f2" role="img" aria-label="Placeholder cake photograph"></div>
+            <div class="flavour-info">
+              <h4>Chocolate Dreams</h4>
+              <p>Rich, chocolatey inspiration for the serious sweet tooth.</p>
+            </div>
+          </article>
+
+          <article class="flavour-card">
+            <div class="flavour-img f3" role="img" aria-label="Placeholder dessert photograph"></div>
+            <div class="flavour-info">
+              <h4>Fruity & Fun</h4>
+              <p>Bright, cheerful flavours for a little something different.</p>
+            </div>
+          </article>
+
+          <article class="flavour-card">
+            <div class="flavour-img f4" role="img" aria-label="Placeholder cupcake photograph"></div>
+            <div class="flavour-info">
+              <h4>Special Treats</h4>
+              <p>Creative sweet inspiration for every kind of celebration.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="rotation-note">
+          <strong>✨ The fun never stops!</strong> These are illustrative flavour categories, not a confirmed weekly flavour list. Our cupcake selection rotates through 200+ flavours, so ask us what's available this week!
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section section-pad" id="menu">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">MORE THAN CUPCAKES</div>
+          <h2>A Little Something<br>For Everyone.</h2>
+          <p>From everyday sweet cravings to big once-in-a-lifetime celebrations, there's always room for something delicious.</p>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-image m1" role="img" aria-label="Placeholder photograph of cupcakes"></div>
+            <div class="menu-content">
+              <h3>Gourmet Cupcakes</h3>
+              <p>Our sweet beginnings! Discover a world of rotating flavours and delightful cupcake creations.</p>
+              <a href="#order">Ask About Cupcakes <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-image m2" role="img" aria-label="Placeholder photograph of a celebration cake"></div>
+            <div class="menu-content">
+              <h3>Custom Cakes</h3>
+              <p>Something special deserves something sweet. Let us help make your celebration extra memorable.</p>
+              <a href="#custom">Plan Your Cake <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-image m3" role="img" aria-label="Placeholder photograph of café coffee"></div>
+            <div class="menu-content">
+              <h3>Café Goodness</h3>
+              <p>A little coffee, a little treat, and a whole lot of reasons to slow down and enjoy the moment.</p>
+              <a href="#order">Ask About Café Items <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOM ORDERS -->
+    <section class="custom section-pad" id="custom">
+      <div class="container custom-grid">
+        <div class="custom-art" role="img" aria-label="Placeholder photograph of a decorated celebration cake">
+          <div class="custom-sticker">MADE<br>WITH<br>LOVE ♡</div>
+        </div>
+
+        <div class="custom-copy">
+          <div class="eyebrow">MADE FOR YOUR MOMENT</div>
+          <h2>Got a Celebration Coming Up?</h2>
+          <p>
+            Birthdays, family get-togethers, milestones, and all the little moments worth celebrating deserve a little extra sweetness.
+          </p>
+
+          <ul class="custom-list">
+            <li><span class="check">✓</span> Custom cakes made for your celebration</li>
+            <li><span class="check">✓</span> Special orders for your sweet occasions</li>
+            <li><span class="check">✓</span> Tell us what you're dreaming up!</li>
+          </ul>
+
+          <div class="deadline">
+            <strong>⏰ Wednesday at NOON!</strong>
+            <p>Orders close Wednesday at 12:00 PM for Friday/Saturday pickup. Please plan ahead and get your order in before the cutoff!</p>
+          </div>
+
+          <a href="#order" class="btn">Let's Plan Something Sweet →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="community section-pad" id="community">
+      <div class="container">
+        <div class="eyebrow">A SWEET HOMETOWN STORY</div>
+        <h2>Same Family. New Chapter.</h2>
+        <p class="community-copy">
+          What started as a gourmet cupcakery has grown into a café & cakery.
+          We're carrying that family warmth into a new chapter, with plenty of sweetness to share.
+          HaliHannigans is here to make everyday moments a little more special.
+        </p>
+
+        <div class="community-features">
+          <div class="community-feature">
+            <span>💚</span>
+            <h3>Family Warmth</h3>
+            <p>A familiar spirit and a fresh new chapter.</p>
+          </div>
+
+          <div class="community-feature">
+            <span>🧁</span>
+            <h3>Endless Sweetness</h3>
+            <p>Over 200 cupcake flavours on rotation.</p>
+          </div>
+
+          <div class="community-feature">
+            <span>☕</span>
+            <h3>More to Enjoy</h3>
+            <p>A cupcakery that grew into a café & cakery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER -->
+    <section class="order section-pad" id="order">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">READY FOR SOMETHING SWEET?</div>
+          <h2>Let's Make It Official!</h2>
+          <p>Tell us what you're craving and send your order details straight to WhatsApp.</p>
+        </div>
+
+        <div class="order-grid">
+          <div class="order-intro">
+            <h2>Sweet Treats Are Just a Message Away.</h2>
+            <p>
+              Have a cupcake craving or a special celebration in mind?
+              Send us your details and let's talk about making it happen.
+            </p>
+
+            <div class="order-method">
+              <div class="order-method-icon">💬</div>
+              <div>
+                <strong>WhatsApp Order Request</strong>
+                <small>Send your order details directly through WhatsApp.</small>
+              </div>
+            </div>
+
+            <div class="order-method">
+              <div class="order-method-icon">📱</div>
+              <div>
+                <strong>Facebook Ordering</strong>
+                <small>Our current ordering channels include Facebook.</small>
+              </div>
+            </div>
+
+            <div class="order-method">
+              <div class="order-method-icon">🛍️</div>
+              <div>
+                <strong>Square Ordering</strong>
+                <small>Online ordering is also available through our Square page.</small>
+              </div>
+            </div>
+
+            <div class="deadline">
+              <strong>Remember the Wednesday cutoff!</strong>
+              <p>Orders close Wednesday at noon for Friday/Saturday pickup.</p>
+            </div>
+
+            <p style="font-size:12px;color:#777b6e;">
+              📍 Jackson, Tennessee<br>
+              ✉️ halihannigansnextgen@gmail.com
+            </p>
+          </div>
+
+          <form class="order-form" id="orderForm">
+            <h3>Let's Talk Treats! 🧁</h3>
+            <p class="form-intro">Fill out the details below. Your message will open in WhatsApp, ready for you to send.</p>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="customerName">Your Name *</label>
+                <input type="text" id="customerName" name="name" placeholder="What should we call you?" required>
+              </div>
+
+              <div class="form-group">
+                <label for="customerPhone">Your Phone Number *</label>
+                <input type="tel" id="customerPhone" name="phone" placeholder="Your best contact number" required>
+              </div>
+
+              <div class="form-group full">
+                <label for="orderDetails">What Would You Like to Order? *</label>
+                <textarea id="orderDetails" name="order" placeholder="Cupcakes, custom cake, café goodies... tell us what you're dreaming of!" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="pickupDay">Preferred Pickup Day *</label>
+                <select id="pickupDay" name="pickupDay" required>
+                  <option value="">Choose a day</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Other / To Be Discussed">Other / To Be Discussed</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="pickupTime">Preferred Pickup Time *</label>
+                <input type="text" id="pickupTime" name="pickupTime" placeholder="e.g. 11:00 AM" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn form-submit">
+              Send My Order on WhatsApp <span>→</span>
+            </button>
+
+            <p class="form-disclaimer">
+              This sends your filled-in details to WhatsApp. Your order is a request, not a confirmed booking. HaliHannigans will need to confirm availability and details.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">HaliHannigans 🧁</div>
+          <p>
+            Halihannigan's Next Gen. A gourmet cupcakery turned café & cakery,
+            bringing a whole lot of sweetness to Jackson, Tennessee.
+            Same family. New chapter.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#home">Home</a>
+          <a href="#flavours">Flavours</a>
+          <a href="#menu">Our Menu</a>
+          <a href="#custom">Custom Orders</a>
+          <a href="#community">Our Story</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Say Hello!</h4>
+          <p>📍 Jackson, Tennessee</p>
+          <a href="mailto:halihannigansnextgen@gmail.com">✉️ Email Us</a>
+          <a href="#order">💬 Send an Order Request</a>
+          <p>🧁 200+ flavours on rotation</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> <strong>HaliHannigans</strong>. All sweetness reserved.</p>
+        <p>Made with ♡ and a little extra frosting.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    // Close mobile menu after choosing a section
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Automatic copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // WhatsApp order form
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('customerName').value.trim();
+      const phone = document.getElementById('customerPhone').value.trim();
+      const order = document.getElementById('orderDetails').value.trim();
+      const pickupDay = document.getElementById('pickupDay').value;
+      const pickupTime = document.getElementById('pickupTime').value.trim();
+
+      if (!name || !phone || !order || !pickupDay || !pickupTime) {
+        alert('Please fill out all the required fields so we have everything we need!');
+        return;
+      }
+
+      const message = [
+        'Hi HaliHannigans! 🧁💚',
+        '',
+        'I would love to place an order!',
+        '',
+        '👤 Name: ' + name,
+        '📞 Phone: ' + phone,
+        '🍰 Order Details: ' + order,
+        '📅 Preferred Pickup Day: ' + pickupDay,
+        '⏰ Preferred Pickup Time: ' + pickupTime,
+        '',
+        'Thank you! Looking forward to something sweet! 💚'
+      ].join('\n');
+
+      // Intentional placeholder number: replace with the bakery's verified WhatsApp number.
+      const whatsappNumber = '1234567890';
+
+      const whatsappURL = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
+
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+
+</body>
+</html>
